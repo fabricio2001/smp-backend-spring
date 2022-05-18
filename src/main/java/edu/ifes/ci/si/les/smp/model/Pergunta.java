@@ -1,3 +1,5 @@
+package edu.ifes.ci.si.les.smp.model;
+
 import java.util.Collection;
 
 public class Pergunta {

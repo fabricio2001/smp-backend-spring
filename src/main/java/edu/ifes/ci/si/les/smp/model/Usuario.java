@@ -1,4 +1,7 @@
+package edu.ifes.ci.si.les.smp.model;
+
 import java.util.Collection;
+import java.util.Date;
 
 public class Usuario {
 

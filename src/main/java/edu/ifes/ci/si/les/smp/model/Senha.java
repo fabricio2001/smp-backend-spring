@@ -1,3 +1,7 @@
+package edu.ifes.ci.si.les.smp.model;
+
+import java.util.Date;
+
 public class Senha {
 
 	private String idSenha;

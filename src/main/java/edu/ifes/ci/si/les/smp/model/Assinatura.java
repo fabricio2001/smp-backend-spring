@@ -6,8 +6,6 @@ public class Assinatura {
 
 	private String idAssinatura;
 
-	private String planoAssinatura;
-
 	private String enderecoAssinatura;
 
 	private Date dataAssinatura;

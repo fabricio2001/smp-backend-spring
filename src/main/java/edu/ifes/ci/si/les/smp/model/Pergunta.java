@@ -8,8 +8,6 @@ public class Pergunta {
 
 	private String descricaoPergunta;
 
-	private Collection<PerguntaRecuperacaoCadastro> perguntaRecuperacaoCadastro;
-
 	private RecuperacaoSenha recuperacaoSenha;
 
 }

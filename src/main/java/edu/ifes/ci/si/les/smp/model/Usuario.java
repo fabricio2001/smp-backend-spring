@@ -1,6 +1,5 @@
 package edu.ifes.ci.si.les.smp.model;
 
-import java.util.Collection;
 import java.util.Date;
 
 public class Usuario {
@@ -22,9 +21,5 @@ public class Usuario {
 	private Date dataCadastroUsuario;
 
 	private Integer confirmaUsuario;
-
-	private Collection<PerguntaRecuperacaoCadastro> perguntaRecuperacaoCadastro;
-
-	private Collection<PontoAcesso> pontoAcesso;
 
 }

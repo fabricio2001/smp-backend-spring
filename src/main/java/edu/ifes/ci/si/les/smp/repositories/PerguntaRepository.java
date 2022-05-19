@@ -3,6 +3,9 @@ package edu.ifes.ci.si.les.smp.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-public class PerguntaRepository {
+import edu.ifes.ci.si.les.smp.model.Pergunta;
+
+@Repository
+public interface PerguntaRepository extends JpaRepository<Pergunta, String> {
     
 }

@@ -18,6 +18,19 @@
 	</properties>
 
 	<dependencies>
+
+	<dependency>
+		<groupId>org.postgresql</groupId>
+		<artifactId>postgresql</artifactId>
+		<version>42.3.5</version>
+	</dependency>
+
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>8.0.29</version>
+	</dependency>
+
 	<!-- Essa dependencia não estava entre a lista que o prof passou -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

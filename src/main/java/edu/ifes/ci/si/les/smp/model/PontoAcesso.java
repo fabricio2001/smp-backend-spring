@@ -24,6 +24,8 @@ public class PontoAcesso implements Serializable{
 
 	private Date dataCadastroPontoAcesso;
 
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 
 }

@@ -30,8 +30,12 @@ public class Assinatura implements Serializable{
 
 	private Integer confirmaPagamentoAssinatura;
 
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 
+	@ManyToOne
+	@JoinColumn(name = "planoAssinatura_id")
 	private PlanoAssinatura planoAssinatura;
 
 }

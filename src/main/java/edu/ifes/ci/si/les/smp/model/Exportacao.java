@@ -22,8 +22,12 @@ public class Exportacao implements Serializable{
 
 	private Date dataExportacao;
 
+	@ManyToOne
+	@JoinColumn(name = "assinatura_id")
 	private Assinatura assinatura;
 
+	@ManyToOne
+	@JoinColumn(name = "grupoSenha_id")
 	private GrupoSenha grupoSenha;
 
 }

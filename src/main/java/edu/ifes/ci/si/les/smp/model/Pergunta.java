@@ -21,6 +21,4 @@ public class Pergunta implements Serializable{
 
 	private String descricaoPergunta;
 
-	private RecuperacaoSenha recuperacaoSenha;
-
 }

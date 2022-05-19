@@ -24,8 +24,8 @@ public class RecuperacaoSenha implements Serializable{
 
 	private boolean retornoRecuperacao;
 
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
-
-	private PerguntaRecuperacaoCadastro perguntaRecuperacaoCadastro;
 
 }

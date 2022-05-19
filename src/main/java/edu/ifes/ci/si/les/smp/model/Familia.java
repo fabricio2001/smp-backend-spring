@@ -34,6 +34,8 @@ public class Familia implements Serializable{
 
 	private Integer confirmaFamilia;
 
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 
 }

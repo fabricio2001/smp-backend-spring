@@ -26,8 +26,12 @@ public class PerguntaRecuperacaoCadastro implements Serializable{
 
 	private Date dataCadastroPergunta;
 
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 
+	@ManyToOne
+	@JoinColumn(name = "pergunta_id")
 	private Pergunta pergunta;
 
 }

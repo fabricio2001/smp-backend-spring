@@ -22,10 +22,16 @@ public class CompartilhamentoFamilia implements Serializable {
 
 	private Date dataCompFamilia;
 
+	@ManyToOne
+	@JoinColumn(name = "familia_id")
 	private Familia familia;
 
+	@ManyToOne
+	@JoinColumn(name = "senha_id")
 	private Senha senha;
 
+	@ManyToOne
+	@JoinColumn(name = "grupoSenha_id")
 	private GrupoSenha grupoSenha;
 
 }

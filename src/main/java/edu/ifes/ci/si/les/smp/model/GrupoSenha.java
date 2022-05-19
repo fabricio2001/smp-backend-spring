@@ -26,6 +26,8 @@ public class GrupoSenha implements Serializable{
 
 	private Date dataCadastroGrupo;
 
+	@ManyToOne
+	@JoinColumn(name = "usuario_id")
 	private Usuario usuario;
 
 }

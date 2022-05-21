@@ -42,11 +42,11 @@ public class Usuario implements Serializable{
 	private Integer confirmaUsuario;
 
 	@OneToMany
-	@JoinColumn(name = "perguntaRecuperacaoCadastro_id")
+	@JoinColumn(name = "idPerguntaRecuperacao")
 	private Collection<PerguntaRecuperacaoCadastro> perguntaRecuperacaoCadastros = new ArrayList<>();
 
 	@OneToMany
-	@JoinColumn(name = "pontoAcessos_id")
+	@JoinColumn(name = "idPontoAcesso")
 	private Collection<PontoAcesso> pontoAcessos = new ArrayList<>();
 
 }

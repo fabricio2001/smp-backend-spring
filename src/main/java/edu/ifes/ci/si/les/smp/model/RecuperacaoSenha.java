@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.*;
 
 @Entity
@@ -20,6 +22,7 @@ public class RecuperacaoSenha implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String idRecuperacaoSenha;
 
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataRecuperacaoSenha;
 
 	private boolean retornoRecuperacao;

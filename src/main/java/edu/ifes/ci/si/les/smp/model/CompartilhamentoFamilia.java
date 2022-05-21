@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.*;
 
 @Entity
@@ -20,15 +22,12 @@ public class CompartilhamentoFamilia implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String idCompFamilia;
 
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataCompFamilia;
 
 	@ManyToOne
 	@JoinColumn(name = "familia_id")
 	private Familia familia;
-
-	@ManyToOne
-	@JoinColumn(name = "senha_id")
-	private Senha senha;
 
 	@ManyToOne
 	@JoinColumn(name = "grupoSenha_id")

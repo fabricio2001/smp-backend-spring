@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.*;
 
 @Entity
@@ -24,6 +26,7 @@ public class PerguntaRecuperacaoCadastro implements Serializable{
 
 	private Integer statusPerguntaRecuperacao;
 
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataCadastroPergunta;
 
 	@ManyToOne

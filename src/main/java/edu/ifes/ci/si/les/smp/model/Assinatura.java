@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.*;
 
 @Entity
@@ -22,8 +24,10 @@ public class Assinatura implements Serializable{
 
 	private String enderecoAssinatura;
 
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataAssinatura;
 
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataRenovacao;
 
 	private Integer statusAssinatura;

@@ -54,9 +54,9 @@ public class _DBService {
     
     public void instantiateTestDatabase() throws ParseException, IOException {
         
-        // PlanoAssinatura planoAssinatura1 = new PlanoAssinatura(null, "free", 0, 0.0);
-        // PlanoAssinatura planoAssinatura2 = new PlanoAssinatura(null, "premium", 6, 10.0);
+        PlanoAssinatura planoAssinatura1 = new PlanoAssinatura(null, "1111", 11, 11.1f);
+        PlanoAssinatura planoAssinatura2 = new PlanoAssinatura(null, "2222", 22, 22.2f);
         
-        // planoAssinaturaRepository.saveAll(Arrays.asList(planoAssinatura1, planoAssinatura2));
+        planoAssinaturaRepository.saveAll(Arrays.asList(planoAssinatura1, planoAssinatura2));
     }
 }

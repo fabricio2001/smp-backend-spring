@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.*;
 
 @Entity
@@ -20,6 +22,7 @@ public class Exportacao implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String idExportacao;
 
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataExportacao;
 
 	@ManyToOne

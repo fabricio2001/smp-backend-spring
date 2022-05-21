@@ -7,7 +7,6 @@ import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StreamUtils;
 
 import edu.ifes.ci.si.les.smp.model.Assinatura;
 import edu.ifes.ci.si.les.smp.model.CompartilhamentoFamilia;

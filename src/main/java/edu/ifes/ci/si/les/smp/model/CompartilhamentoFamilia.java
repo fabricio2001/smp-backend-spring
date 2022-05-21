@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -22,13 +23,16 @@ public class CompartilhamentoFamilia implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String idCompFamilia;
 
+	@NotNull(message = "Data de compartilhamento deve ser preenchido")
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataCompFamilia;
 
+	@NotNull(message = "A familia deve ser preenchido")
 	@ManyToOne
 	@JoinColumn(name = "familia_id")
 	private Familia familia;
 
+	@NotNull(message = "O grupo de senhas deve ser preenchido")
 	@ManyToOne
 	@JoinColumn(name = "grupoSenha_id")
 	private GrupoSenha grupoSenha;

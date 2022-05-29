@@ -27,9 +27,35 @@ public class PlanoAssinaturaService {
         }
     }
 
-    public Collection<PlanoAssinatura> findAll() {
+    public Collection<PlanoAssinatura> findAll() { 
         return repository.findAll();
     }
-        
+
+    public PlanoAssinatura insert(PlanoAssinatura obj) {
+    	obj.setIdPlanoAssinatura(null);
+    	try {
+        	return repository.save(obj);
+        } catch (DataIntegrityViolationException e) {
+            throw new DataIntegrityException("Campo(s) obrigatório(s) da PlanoAssinatura não foi(foram) preenchido(s)");
+        }
+    }
+     
+    public PlanoAssinatura update(PlanoAssinatura obj) {
+    	findById(obj.getIdPlanoAssinatura());
+    	try {
+        	return repository.save(obj);
+        } catch (DataIntegrityViolationException e) {
+            throw new DataIntegrityException("Campo(s) obrigatório(s) da PlanoAssinatura não foi(foram) preenchido(s)");
+        }
+    }
+
+    public void delete(String id) {
+        findById(id);
+        try {
+            repository.deleteById(id);
+        } catch (DataIntegrityViolationException e) {
+            throw new DataIntegrityException("Não é possível excluir um PlanoAssinatura que possui assinante!");
+        }
+    }
     
 }

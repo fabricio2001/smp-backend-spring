@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.*;
 
@@ -34,6 +35,7 @@ public class PontoAcesso implements Serializable{
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataCadastroPontoAcesso;
 
+	@JsonIgnore
 	@NotNull(message = "O usuario deve ser preenchido")
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")

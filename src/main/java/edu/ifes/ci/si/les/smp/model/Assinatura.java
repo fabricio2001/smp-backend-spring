@@ -25,7 +25,7 @@ public class Assinatura implements Serializable{
 
 	@Column(length = 50)
 	@NotBlank(message = "Endereço deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Endereço deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Endereço deve ter entre 1 e 50 letras")
 	private String enderecoAssinatura;
 
 	@NotNull(message = "Data de assinatura deve ser preenchido")

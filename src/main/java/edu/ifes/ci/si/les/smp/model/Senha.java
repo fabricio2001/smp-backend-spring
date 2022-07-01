@@ -27,27 +27,27 @@ public class Senha implements Serializable{
 
 	@Column(length = 50)
 	@NotBlank(message = "Nome da senha deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Nome da senha deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Nome da senha deve ter entre 1 e 50 letras")
 	private String nomeSenha;
 
 	@Column(length = 50)
 	@NotBlank(message = "Url da senha deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Url da senha deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Url da senha deve ter entre 1 e 50 letras")
 	private String urlSenha;
 
 	@Column(length = 50)
 	@NotBlank(message = "Email da senha deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Email da senha deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Email da senha deve ter entre 1 e 50 letras")
 	private String emailSenha;
 
 	@Column(length = 50)
 	@NotBlank(message = "Conta da senha deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Conta da senha deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Conta da senha deve ter entre 1 e 50 letras")
 	private String contaSenha;
 	
 	@Column(length = 50)
 	@NotBlank(message = "A senha deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "A senha deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "A senha deve ter entre 1 e 50 letras")
 	private String senhaSenha;
 
 	private String adicionalSenha;

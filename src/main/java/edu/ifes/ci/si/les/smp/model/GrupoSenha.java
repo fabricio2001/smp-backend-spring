@@ -27,12 +27,12 @@ public class GrupoSenha implements Serializable{
 
 	@Column(length = 50)
 	@NotBlank(message = "Nome do grupo deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Nome do grupo deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Nome do grupo deve ter entre 1 e 50 letras")
 	private String nomeGrupo;
 
 	@Column(length = 50)
 	@NotBlank(message = "Descrição do grupo deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Descrição do grupo deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Descrição do grupo deve ter entre 1 e 50 letras")
 	private String descricaoGrupo;
 
 	@NotNull(message = "Data de cadastro deve ser preenchido")

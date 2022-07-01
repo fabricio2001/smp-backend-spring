@@ -74,13 +74,14 @@ public class _DBService {
         Pergunta pergunta2 = new Pergunta(null, "Nome do gato?");
         perguntaRepository.saveAll(Arrays.asList(pergunta1, pergunta2));
 
-        Usuario usuario1 = new Usuario(null, "Fabricio", "Louzada", "123456789", "fabricio@gmail.com", "123456789", "123456789", sdf.parse("2020-04-12"), 1, null, null);
-        Usuario usuario2 = new Usuario(null, "Fabio", "Colodette", "123456789", "fabio@gmail.com", "123456789", "123456789", sdf.parse("2020-04-12"), 1, null, null);
+        Usuario usuario1 = new Usuario(null, "Fabricio", "Louzada", "123.456.789-10", "fabricio@gmail.com", "123456789", "123456789", sdf.parse("2020-04-12"), 1, null, null);
+        Usuario usuario2 = new Usuario(null, "Fabio", "Colodette", "123.456.789-10", "fabio@gmail.com", "123456789", "123456789", sdf.parse("2020-04-12"), 1, null, null);
         usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2));
-
+/*
         PerguntaRecuperacaoCadastro perguntaRecuperacaoCadastro1 = new PerguntaRecuperacaoCadastro(null, "Pitoco", 1, sdf.parse("2020-04-12"), usuario1, pergunta1);
         PerguntaRecuperacaoCadastro perguntaRecuperacaoCadastro2 = new PerguntaRecuperacaoCadastro(null, "Julia", 1, sdf.parse("2020-04-12"), usuario1, pergunta2);
         perguntaRecuperacaoCadastroRepository.saveAll(Arrays.asList(perguntaRecuperacaoCadastro1, perguntaRecuperacaoCadastro2));
+*/
 
         RecuperacaoSenha recuperacaoSenha1 = new RecuperacaoSenha(null, sdf.parse("2020-04-12"), true, usuario1);
         RecuperacaoSenha recuperacaoSenha2 = new RecuperacaoSenha(null, sdf.parse("2020-04-12"), true, usuario1);
@@ -106,8 +107,8 @@ public class _DBService {
         Exportacao exportacao2 = new Exportacao(null, sdf.parse("2020-05-12"), assinatura2, grupoSenha2);
         exportacaoRepository.saveAll(Arrays.asList(exportacao1, exportacao2));
 
-        Familia familia1 = new Familia(null, "fabricio", "louzada", "123654789", "fabricio@gmail.com", "987654321", sdf.parse("2020-04-12"), 1, usuario2);
-        Familia familia2 = new Familia(null, "andre", "louzada", "123654789", "andre@gmail.com", "987654321", sdf.parse("2020-05-12"), 1, usuario2);
+        Familia familia1 = new Familia(null, "fabricio", "louzada", "123.654.789-10", "fabricio@gmail.com", "987654321", sdf.parse("2020-04-12"), 1, usuario2);
+        Familia familia2 = new Familia(null, "andre", "louzada", "123.654.789-10", "andre@gmail.com", "987654321", sdf.parse("2020-05-12"), 1, usuario2);
         familiaRepository.saveAll(Arrays.asList(familia1, familia2));
 
         CompartilhamentoFamilia compartilhamentoFamilia1 = new CompartilhamentoFamilia(null, sdf.parse("2020-04-12"), familia1, grupoSenha1);

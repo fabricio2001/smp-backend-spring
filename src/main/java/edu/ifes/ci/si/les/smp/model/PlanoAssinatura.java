@@ -26,13 +26,13 @@ public class PlanoAssinatura implements Serializable{
 	
 	@Column(length = 50)
 	@NotBlank(message = "Descrição do plano deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Descrição do plano deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Descrição do plano deve ter entre 1 e 50 letras")
 	private String descricaoPlanoAssinatura;
 
 	@Digits(integer=4, fraction=0, message = "Duração do plano da assinatura deve ser preenchido com um valor inteiro")
 	private Integer duracaoPlanoAssinatura;
 
-	@Min(value = 1, message = "Valor do plano deve ser maior que zero")
+	@Min(value = 0, message = "Valor do plano deve ser maior ou igual a zero")
     @NotNull(message = "Valor do plano deve ser preenchido")
     @Digits(integer=6, fraction=2, message = "Valor do plano deve ser preenchido com dígitos")
 	private Float valorPlanoAssinatura;

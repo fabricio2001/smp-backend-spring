@@ -31,33 +31,33 @@ public class Usuario implements Serializable{
 
 	@Column(length = 50)
 	@NotBlank(message = "Nome do usuario deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Nome do usuario deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Nome do usuario deve ter entre 1 e 50 letras")
 	private String nomeUsuario;
 
 	@Column(length = 50)
 	@NotBlank(message = "Sobrenome do usuario deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Sobrenome do usuario deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Sobrenome do usuario deve ter entre 1 e 50 letras")
 	private String sobrenomeUsuario;
 	
 	@Column(length = 50)
     @NotBlank(message = "CPF do usuario deve ser preenchido")
-    @Size(min = 2, max = 50, message = "CPF da famila deve ter entre 2 e 50 letras")
+    @Size(min = 14, max = 14, message = "CPF da famila deve ter 14 caracteres")
     @Pattern(regexp="\\d{3}.\\d{3}.\\d{3}-\\d{2}", message = "CPF da familia deve seguir o padrão NNN.NNN.NNN-NN")
 	private String cpfUsuario;
 
 	@Column(length = 50)
 	@NotBlank(message = "Email do usuario deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Email do usuario deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Email do usuario deve ter entre 1 e 50 letras")
 	private String emailUsuario;
 
 	@Column(length = 50)
 	@NotBlank(message = "Telefone do usuario deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Telefone do usuario deve ter no minimo 10 letras")
+	@Size(min = 9, max = 11 , message = "Telefone do usuario deve ter entre 9 e 11 letras")
 	private String telefoneUsuario;
 
 	@Column(length = 50)
 	@NotBlank(message = "Senha do usuario deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Senha do usuario deve ter no minimo 10 letras")
+	@Size(min = 8, max = 50 , message = "Senha do usuario deve ter entre 8 e 50 caracteres")
 	private String senhaUsuario;
 
 	@NotNull(message = "Data de cadastro deve ser preenchido")

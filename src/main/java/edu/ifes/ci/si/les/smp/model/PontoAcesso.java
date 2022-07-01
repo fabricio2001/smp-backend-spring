@@ -28,7 +28,7 @@ public class PontoAcesso implements Serializable{
 
 	@Column(length = 50)
 	@NotBlank(message = "Novo dispositivo de acesso deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Novo dispositivo de acesso deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Novo dispositivo de acesso deve ter entre 1 e 50 letras")
 	private String novoDispositivoPontoAcesso;
 
 	@NotNull(message = "Data de cadastro deve ser preenchido")

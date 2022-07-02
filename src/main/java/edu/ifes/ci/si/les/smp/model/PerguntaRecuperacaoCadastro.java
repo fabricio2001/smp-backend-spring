@@ -32,8 +32,7 @@ public class PerguntaRecuperacaoCadastro implements Serializable{
 	private String respostaPerguntaRecuperacao;
 
 	@Column(length = 50)
-	@NotBlank(message = "Status da pergunta deve ser preenchido")
-	@Size(min = 1, max = 50 , message = "Status da pergunta deve ter entre 1 e 50 letras")
+	//@NotBlank(message = "Status da pergunta deve ser preenchido")
 	private Integer statusPerguntaRecuperacao;
 	
 	@NotNull(message = "Data de cadastro deve ser preenchido")

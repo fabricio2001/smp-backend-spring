@@ -77,11 +77,10 @@ public class _DBService {
         Usuario usuario1 = new Usuario(null, "Fabricio", "Louzada", "123.456.789-10", "fabricio@gmail.com", "123456789", "123456789", sdf.parse("2020-04-12"), 1, null, null);
         Usuario usuario2 = new Usuario(null, "Fabio", "Colodette", "123.456.789-10", "fabio@gmail.com", "123456789", "123456789", sdf.parse("2020-04-12"), 1, null, null);
         usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2));
-/*
+
         PerguntaRecuperacaoCadastro perguntaRecuperacaoCadastro1 = new PerguntaRecuperacaoCadastro(null, "Pitoco", 1, sdf.parse("2020-04-12"), usuario1, pergunta1);
         PerguntaRecuperacaoCadastro perguntaRecuperacaoCadastro2 = new PerguntaRecuperacaoCadastro(null, "Julia", 1, sdf.parse("2020-04-12"), usuario1, pergunta2);
         perguntaRecuperacaoCadastroRepository.saveAll(Arrays.asList(perguntaRecuperacaoCadastro1, perguntaRecuperacaoCadastro2));
-*/
 
         RecuperacaoSenha recuperacaoSenha1 = new RecuperacaoSenha(null, sdf.parse("2020-04-12"), true, usuario1);
         RecuperacaoSenha recuperacaoSenha2 = new RecuperacaoSenha(null, sdf.parse("2020-04-12"), true, usuario1);

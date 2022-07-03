@@ -57,4 +57,10 @@ public class ExportacaoController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+    
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.POST)
+    public ResponseEntity<Exportacao> export(@PathVariable String id, @Valid @RequestBody Exportacao obj, BindingResult br) {
+    	Exportacao objE = service.export(id, obj);
+        return ResponseEntity.ok().body(objE);
+    }
 }

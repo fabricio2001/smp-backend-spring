@@ -98,8 +98,8 @@ public class _DBService {
         Senha senha2 = new Senha(null, "LoL", "lol.com", "fabricio@gmail.com", "fabricio", "159753", null, sdf.parse("2020-04-12"), grupoSenha2);
         senhaRepository.saveAll(Arrays.asList(senha1, senha2));
     
-        Assinatura assinatura1 = new Assinatura(null, "n lembro", sdf.parse("2020-04-12"), sdf.parse("2021-04-12"), 1, 1, usuario1, planoAssinatura1);
-        Assinatura assinatura2 = new Assinatura(null, "n lembro", sdf.parse("2020-04-12"), sdf.parse("2021-04-12"), 1, 1, usuario2, planoAssinatura2);
+        Assinatura assinatura1 = new Assinatura(null, "usuario 1", sdf.parse("2020-04-12"), sdf.parse("2021-04-12"), 1, 1, usuario1, planoAssinatura1);
+        Assinatura assinatura2 = new Assinatura(null, "usuario 2", sdf.parse("2020-04-12"), sdf.parse("2021-04-12"), 1, 1, usuario2, planoAssinatura2);
         assinaturaRepository.saveAll(Arrays.asList(assinatura1, assinatura2));
 
         Exportacao exportacao1 = new Exportacao(null, sdf.parse("2020-04-12"), assinatura2, grupoSenha1);

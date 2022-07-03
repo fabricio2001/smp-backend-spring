@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
+import edu.ifes.ci.si.les.smp.services.exceptions.BusinessRuleException;
 import edu.ifes.ci.si.les.smp.model.Exportacao;
 import edu.ifes.ci.si.les.smp.repositories.ExportacaoRepository;
 import edu.ifes.ci.si.les.smp.services.exceptions.DataIntegrityException;
@@ -55,6 +56,25 @@ public class ExportacaoService {
             repository.deleteById(id);
         } catch (DataIntegrityViolationException e) {
             throw new DataIntegrityException("Não é possível excluir um Exportacao que possui assinante!");
+        }
+    }
+    
+    public Exportacao export(String id, Exportacao obj) {
+        try {
+            Integer objA = repository.findAssinatura(id);
+            if(objA > 0) {
+            	Integer objC = repository.findCountGrupoSenha(id);
+            	if(objC > 1) {
+            		obj.setIdExportacao(null);
+            		return repository.save(obj);
+            	}else {
+            		throw new BusinessRuleException("O usuario tem que possui 2 grupos cadastrado");
+            	}
+            }else {
+            	throw new BusinessRuleException("Recurso indisponivel para essa assinatura");
+            }
+        } catch (NoSuchElementException e) {
+        	throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Exportacao.class.getName());
         }
     }
     

@@ -57,4 +57,10 @@ public class AssinaturaController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+    
+    @RequestMapping(value = "/mac/{id}", method = RequestMethod.POST)
+    public ResponseEntity<Assinatura> assinatura(@PathVariable String id, @Valid @RequestBody Assinatura obj, BindingResult br) {
+    	Assinatura objE = service.assinatura(id, obj);
+        return ResponseEntity.ok().body(objE);
+    }
 }

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import edu.ifes.ci.si.les.smp.model.Exportacao;
 import edu.ifes.ci.si.les.smp.model.Familia;
 import edu.ifes.ci.si.les.smp.services.FamiliaService;
 import edu.ifes.ci.si.les.smp.services.exceptions.ConstraintException;
@@ -56,5 +57,11 @@ public class FamiliaController {
     public ResponseEntity<Void> delete(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+    
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.POST)
+    public ResponseEntity<Familia> share(@PathVariable String id, @Valid @RequestBody Familia obj, BindingResult br) {
+    	Familia objF = service.share(id, obj);
+        return ResponseEntity.ok().body(objF);
     }
 }

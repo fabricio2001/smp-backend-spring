@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ifes.ci.si.les.smp.model.RecuperacaoSenha;
+import edu.ifes.ci.si.les.smp.model.RecuperacaoSenha;
 import edu.ifes.ci.si.les.smp.services.RecuperacaoSenhaService;
 import edu.ifes.ci.si.les.smp.services.exceptions.ConstraintException;
 

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ifes.ci.si.les.smp.model.PontoAcesso;
+import edu.ifes.ci.si.les.smp.model.PontoAcesso;
 import edu.ifes.ci.si.les.smp.services.PontoAcessoService;
 import edu.ifes.ci.si.les.smp.services.exceptions.ConstraintException;
 
@@ -38,7 +39,9 @@ public class PontoAcessoController {
 
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<PontoAcesso> insert(@Valid @RequestBody PontoAcesso obj, BindingResult br) {
-        if (br.hasErrors())
+        System.out.println("=============================================");
+        System.out.println(obj);
+    	if (br.hasErrors())
         	throw new ConstraintException(br.getAllErrors().get(0).getDefaultMessage());
         obj = service.insert(obj);
         return ResponseEntity.ok().body(obj);
@@ -56,5 +59,11 @@ public class PontoAcessoController {
     public ResponseEntity<Void> delete(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+    
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.POST)
+    public ResponseEntity<PontoAcesso> export(@PathVariable String id, @Valid @RequestBody PontoAcesso obj, BindingResult br) {
+    	PontoAcesso objE = service.export(id, obj);
+        return ResponseEntity.ok().body(objE);
     }
 }

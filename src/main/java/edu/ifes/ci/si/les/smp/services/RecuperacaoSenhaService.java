@@ -8,7 +8,9 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import edu.ifes.ci.si.les.smp.model.RecuperacaoSenha;
+import edu.ifes.ci.si.les.smp.model.RecuperacaoSenha;
 import edu.ifes.ci.si.les.smp.repositories.RecuperacaoSenhaRepository;
+import edu.ifes.ci.si.les.smp.services.exceptions.BusinessRuleException;
 import edu.ifes.ci.si.les.smp.services.exceptions.DataIntegrityException;
 import edu.ifes.ci.si.les.smp.services.exceptions.ObjectNotFoundException;
 
@@ -57,5 +59,4 @@ public class RecuperacaoSenhaService {
             throw new DataIntegrityException("Não é possível excluir um RecuperacaoSenha que possui assinante!");
         }
     }
-    
 }

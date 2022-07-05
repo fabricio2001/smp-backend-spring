@@ -18,6 +18,10 @@ import edu.ifes.ci.si.les.smp.services.exceptions.BusinessRuleException;
 import edu.ifes.ci.si.les.smp.services.exceptions.DataIntegrityException;
 import edu.ifes.ci.si.les.smp.services.exceptions.ObjectNotFoundException;
 
+/*
+ * ENZO
+ * */
+
 @Service
 public class PontoAcessoService {
 
@@ -76,11 +80,10 @@ public class PontoAcessoService {
         	obj.setUsuario(user);
         	String endereco = obj.getNovoDispositivoPontoAcesso();
             Integer objA = repository.findPontoAcessoExist(id, endereco);
-   
-       
             if(objA == 0) {
             	Integer objC = repository.findCountPontoAcesso(id);
-            	if(objC <= 3) {
+            	System.out.println(objC);
+            	if(objC < 3) {
             		obj.setIdPontoAcesso(null);
             		return repository.save(obj);
             	}else {

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import edu.ifes.ci.si.les.smp.model.Exportacao;
 import edu.ifes.ci.si.les.smp.model.Familia;
+import edu.ifes.ci.si.les.smp.repositories.AssinaturaRepository;
 import edu.ifes.ci.si.les.smp.repositories.FamiliaRepository;
 import edu.ifes.ci.si.les.smp.services.exceptions.BusinessRuleException;
 import edu.ifes.ci.si.les.smp.services.exceptions.DataIntegrityException;
@@ -19,7 +20,7 @@ public class FamiliaService {
 
     @Autowired
     private FamiliaRepository repository;
-
+    
     public Familia findById(String id) {
         try {
             Familia obj = repository.findById(id).get();
@@ -59,24 +60,4 @@ public class FamiliaService {
             throw new DataIntegrityException("Não é possível excluir um Familia que possui assinante!");
         }
     }
-    
-    public Familia share(String id, Familia obj) {
-        try {
-            Integer objA = repository.findAssinatura(id);
-            if(objA > 0) {
-            	Integer objS = repository.findAssociatedFamily(id);
-            	if(objS > 1) {
-            		obj.setIdFamilia(id);
-            		return repository.save(obj);
-            	}else {
-            		throw new BusinessRuleException("A famila tem que ser comfirmada");
-            	}
-            }else {
-            	throw new BusinessRuleException("Recurso indisponivel para essa assinatura");
-            }
-        } catch (NoSuchElementException e) {
-        	throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Exportacao.class.getName());
-        }
-    }
-    
 }

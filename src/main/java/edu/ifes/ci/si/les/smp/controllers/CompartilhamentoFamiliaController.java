@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import edu.ifes.ci.si.les.smp.model.CompartilhamentoFamilia;
+import edu.ifes.ci.si.les.smp.model.CompartilhamentoFamilia;
 import edu.ifes.ci.si.les.smp.services.CompartilhamentoFamiliaService;
 import edu.ifes.ci.si.les.smp.services.exceptions.ConstraintException;
+import edu.ifes.ci.si.les.smp.util.Compartilhar;
 
 @RestController
 @RequestMapping(value = "/compartilhamentofamilia")
@@ -56,5 +58,11 @@ public class CompartilhamentoFamiliaController {
     public ResponseEntity<Void> delete(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+    
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    public ResponseEntity<CompartilhamentoFamilia> share(@Valid @RequestBody Compartilhar obj, BindingResult br) {
+    	CompartilhamentoFamilia objF = service.share(obj);
+        return ResponseEntity.ok().body(objF);
     }
 }

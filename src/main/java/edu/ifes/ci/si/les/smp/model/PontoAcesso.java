@@ -35,7 +35,7 @@ public class PontoAcesso implements Serializable{
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataCadastroPontoAcesso;
 
-	@JsonIgnore
+	//@JsonIgnore
 	@NotNull(message = "O usuario deve ser preenchido")
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")

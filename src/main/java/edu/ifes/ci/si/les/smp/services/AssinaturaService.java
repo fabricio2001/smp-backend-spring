@@ -14,6 +14,10 @@ import edu.ifes.ci.si.les.smp.services.exceptions.BusinessRuleException;
 import edu.ifes.ci.si.les.smp.services.exceptions.DataIntegrityException;
 import edu.ifes.ci.si.les.smp.services.exceptions.ObjectNotFoundException;
 
+/*
+ * LUCAS
+ * */
+
 @Service
 public class AssinaturaService {
 
@@ -64,9 +68,17 @@ public class AssinaturaService {
         try {
             Integer objA = repository.findMac(id);
             if(objA > 0) {
-        		obj.setIdAssinatura(null);
-        		return repository.save(obj);
-            }else {
+            	String user = obj.getUsuario().getIdUsuario();
+       
+            	Integer objB = repository.findStatusPagamentoAssinatura(user);
+            	System.out.println(objB);
+            	if(objB == 0) {
+            		obj.setIdAssinatura(null);
+            		return repository.save(obj);
+            	}else {
+                	throw new BusinessRuleException("O usuario possui um pagamento predente");
+                }
+        	}else {
             	throw new BusinessRuleException("Endereco não cadastrado");
             }
         } catch (NoSuchElementException e) {

@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import edu.ifes.ci.si.les.smp.model.RecuperacaoSenha;
 import edu.ifes.ci.si.les.smp.model.RecuperacaoSenha;
+import edu.ifes.ci.si.les.smp.model.RecuperacaoSenha;
 import edu.ifes.ci.si.les.smp.services.RecuperacaoSenhaService;
 import edu.ifes.ci.si.les.smp.services.exceptions.ConstraintException;
+import edu.ifes.ci.si.les.smp.util.Reset;
 
 @RestController
 @RequestMapping(value = "/recuperacaosenha")
@@ -57,5 +59,11 @@ public class RecuperacaoSenhaController {
     public ResponseEntity<Void> delete(@PathVariable String id) {
         service.delete(id);
         return ResponseEntity.noContent().build();
+    }
+    
+    @RequestMapping(value = "/reset", method = RequestMethod.POST)
+    public ResponseEntity<RecuperacaoSenha> reset(@Valid @RequestBody Reset obj, BindingResult br) {
+    	RecuperacaoSenha objE = service.reset(obj);
+        return ResponseEntity.ok().body(objE);
     }
 }

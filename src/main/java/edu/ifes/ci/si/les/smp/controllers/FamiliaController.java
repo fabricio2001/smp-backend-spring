@@ -58,10 +58,4 @@ public class FamiliaController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
-    
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.POST)
-    public ResponseEntity<Familia> share(@PathVariable String id, @Valid @RequestBody Familia obj, BindingResult br) {
-    	Familia objF = service.share(id, obj);
-        return ResponseEntity.ok().body(objF);
-    }
 }

@@ -10,10 +10,12 @@ import edu.ifes.ci.si.les.smp.model.PontoAcesso;
 @Repository
 public interface PontoAcessoRepository extends JpaRepository<PontoAcesso, String> {
 	
+	//ENZO
 	@Transactional(readOnly = true)
     @Query(value = "SELECT COUNT(1) FROM PONTO_ACESSO WHERE usuario_id = ?1 AND novo_dispositivo_ponto_acesso = ?2", nativeQuery = true)
 	public Integer findPontoAcessoExist(String usuario, String endereco);
 	
+	//ENZO
 	@Transactional(readOnly = true)
     @Query(value = "SELECT COUNT(1) FROM PONTO_ACESSO WHERE usuario_id = ?1", nativeQuery = true)
 	public Integer findCountPontoAcesso(String usuario);

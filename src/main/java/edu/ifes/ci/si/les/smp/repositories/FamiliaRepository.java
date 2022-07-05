@@ -1,5 +1,7 @@
 package edu.ifes.ci.si.les.smp.repositories;
 
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -10,11 +12,9 @@ import edu.ifes.ci.si.les.smp.model.Familia;
 @Repository
 public interface FamiliaRepository extends JpaRepository<Familia, String> {
 
+	//FABIO
 	@Transactional(readOnly = true)
-    @Query(value = "SELECT COUNT(1) FROM familia AS fam INNER JOIN assinatura AS ass ON fam.usuario_id = ass.usuario_id AND ass.status_assinatura = 1 AND fam.usuario_id = ?1", nativeQuery = true)
-	public Integer findAssinatura(String usuario);
+    @Query(value = "SELECT COUNT(1) FROM FAMILIA AS fa WHERE fa.EMAIL_FAMILIA  = ?1 AND fa.CPF_FAMILIA = ?2 AND fa.USUARIO_ID = ?3", nativeQuery = true)
+	public Integer findFamiliarUser(String email, String cpf, String id);
 	
-	@Transactional(readOnly = true)
-    @Query(value = "SELECT COUNT(1) FROM familia AS fam INNER JOIN usuario AS us ON fam.usuario_id = us.id_usuario AND fam.confirma_familia = 1 AND us.id_usuario = ?1", nativeQuery = true)
-	public Integer findAssociatedFamily(String usuario);
 }

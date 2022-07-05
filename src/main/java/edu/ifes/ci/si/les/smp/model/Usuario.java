@@ -13,6 +13,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.*;
 
@@ -67,10 +68,12 @@ public class Usuario implements Serializable{
 	@Digits(integer=4, fraction=0, message = "Confirmação do usuario deve ser preenchido com um valor inteiro")
 	private Integer confirmaUsuario;
 
+	@JsonIgnore
 	@OneToMany
 	@JoinColumn(name = "idPerguntaRecuperacao")
 	private Collection<PerguntaRecuperacaoCadastro> perguntaRecuperacaoCadastros = new ArrayList<>();
 
+	@JsonIgnore
 	@OneToMany
 	@JoinColumn(name = "idPontoAcesso")
 	private Collection<PontoAcesso> pontoAcessos = new ArrayList<>();

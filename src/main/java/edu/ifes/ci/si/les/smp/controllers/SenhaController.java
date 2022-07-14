@@ -57,4 +57,16 @@ public class SenhaController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+    
+    @RequestMapping(value = "relatorio/grupo/{id}/{grupo}", method = RequestMethod.GET)
+    public ResponseEntity<Collection<?>> relatorioGrupo(@PathVariable String id, @PathVariable String grupo) {
+    	Collection<?> obj = service.relatorioGrupo(id, grupo);
+        return ResponseEntity.ok().body(obj);
+    }
+    
+    @RequestMapping(value = "relatorio/email/{id}/{email}", method = RequestMethod.GET)
+    public ResponseEntity<Collection<?>> relatorioEmail(@PathVariable String id, @PathVariable String email) {
+    	Collection<?> obj = service.relatorioEmail(id, email);
+        return ResponseEntity.ok().body(obj);
+    }
 }

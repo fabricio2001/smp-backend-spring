@@ -58,4 +58,22 @@ public class SenhaService {
         }
     }
     
+    public Collection<?> relatorioGrupo(String id, String grupo) {
+        try {
+        	Collection<?> obj = repository.relatorioGrupo(id, grupo);
+            return obj;
+        } catch (NoSuchElementException e) {
+        	throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Senha.class.getName());
+        }
+    }
+    
+    public Collection<?> relatorioEmail(String id, String email) {
+        try {
+        	Collection<?> obj = repository.relatorioEmail(id, email);
+            return obj;
+        } catch (NoSuchElementException e) {
+        	throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Senha.class.getName());
+        }
+    }
+    
 }

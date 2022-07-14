@@ -1,5 +1,7 @@
 package edu.ifes.ci.si.les.smp.repositories;
 
+import java.util.Collection;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -24,4 +26,11 @@ public interface AssinaturaRepository extends JpaRepository<Assinatura, String>{
 	@Transactional(readOnly = true)
     @Query(value = "SELECT COUNT(1) FROM ASSINATURA WHERE usuario_id = ?1 AND PLANO_ASSINATURA_ID = 2", nativeQuery = true)
 	public Integer findPlanoAssinatura(String usuario);
+	
+	//Fabricio
+	@Transactional(readOnly = true)
+	@Query(value = "SELECT * FROM ASSINATURA WHERE USUARIO_ID = ?1 "
+			+ "AND DATA_ASSINATURA  >= ?2 "
+			+ "AND DATA_ASSINATURA  <= ?3", nativeQuery = true)
+	public Collection<?> relatorioPagamento(String id, String dataInicial, String dataFinal);
 }

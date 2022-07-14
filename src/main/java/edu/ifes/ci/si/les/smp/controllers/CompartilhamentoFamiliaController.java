@@ -65,4 +65,10 @@ public class CompartilhamentoFamiliaController {
     	CompartilhamentoFamilia objF = service.share(obj);
         return ResponseEntity.ok().body(objF);
     }
+    
+    @RequestMapping(value = "relatorio/compartilhamento/{id}/{dataInicial}/{dataFinal}", method = RequestMethod.GET)
+    public ResponseEntity<Collection<?>> relatorioCompatilhamento(@PathVariable String id, @PathVariable String dataInicial, @PathVariable String dataFinal) {
+    	Collection<?> obj = service.relatorioCompatilhamento(id, dataInicial, dataFinal);
+        return ResponseEntity.ok().body(obj);
+    }
 }

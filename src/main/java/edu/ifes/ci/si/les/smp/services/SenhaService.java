@@ -76,4 +76,13 @@ public class SenhaService {
         }
     }
     
+    public Collection<?> relatorioRepeticaoEmail(String id) {
+        try {
+        	Collection<?> obj = repository.relatorioRepeticaoEmail(id);
+            return obj;
+        } catch (NoSuchElementException e) {
+        	throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Senha.class.getName());
+        }
+    }
+    
 }

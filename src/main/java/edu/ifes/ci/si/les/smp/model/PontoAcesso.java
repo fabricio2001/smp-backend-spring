@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.*;
 
@@ -27,13 +28,14 @@ public class PontoAcesso implements Serializable{
 
 	@Column(length = 50)
 	@NotBlank(message = "Novo dispositivo de acesso deve ser preenchido")
-	@Size(min = 10, max = 50 , message = "Novo dispositivo de acesso deve ter no minimo 10 letras")
+	@Size(min = 1, max = 50 , message = "Novo dispositivo de acesso deve ter entre 1 e 50 letras")
 	private String novoDispositivoPontoAcesso;
 
 	@NotNull(message = "Data de cadastro deve ser preenchido")
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataCadastroPontoAcesso;
 
+	//@JsonIgnore
 	@NotNull(message = "O usuario deve ser preenchido")
 	@ManyToOne
 	@JoinColumn(name = "usuario_id")

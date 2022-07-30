@@ -69,4 +69,11 @@ public class SenhaController {
     	Collection<?> obj = service.relatorioEmail(id, email);
         return ResponseEntity.ok().body(obj);
     }
+    
+    @RequestMapping(value = "relatorio/repeticao/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Collection<?>> relatorioRepeticaoEmail(@PathVariable String id) {
+    	Collection<?> obj = service.relatorioRepeticaoEmail(id);
+        return ResponseEntity.ok().body(obj);
+    }
+    
 }

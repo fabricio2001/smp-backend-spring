@@ -63,4 +63,10 @@ public class AssinaturaController {
     	Assinatura objE = service.assinatura(id, obj);
         return ResponseEntity.ok().body(objE);
     }
+    
+    @RequestMapping(value = "relatorio/pagamento/{id}/{dataInicial}/{dataFinal}", method = RequestMethod.GET)
+    public ResponseEntity<Collection<?>> relatorioPagamento(@PathVariable String id, @PathVariable String dataInicial, @PathVariable String dataFinal) {
+    	Collection<?> obj = service.relatorioPagamento(id, dataInicial, dataFinal);
+        return ResponseEntity.ok().body(obj);
+    }
 }

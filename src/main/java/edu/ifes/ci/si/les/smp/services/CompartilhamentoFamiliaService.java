@@ -16,6 +16,7 @@ import edu.ifes.ci.si.les.smp.model.CompartilhamentoFamilia;
 import edu.ifes.ci.si.les.smp.model.Exportacao;
 import edu.ifes.ci.si.les.smp.model.Familia;
 import edu.ifes.ci.si.les.smp.model.GrupoSenha;
+import edu.ifes.ci.si.les.smp.model.Senha;
 import edu.ifes.ci.si.les.smp.model.CompartilhamentoFamilia;
 import edu.ifes.ci.si.les.smp.repositories.AssinaturaRepository;
 import edu.ifes.ci.si.les.smp.repositories.CompartilhamentoFamiliaRepository;
@@ -124,6 +125,15 @@ public class CompartilhamentoFamiliaService {
             }
         } catch (NoSuchElementException e) {
         	throw new ObjectNotFoundException("Objeto não encontrado! Id: , Tipo: " + Exportacao.class.getName());
+        }
+    }
+    
+    public Collection<?> relatorioCompatilhamento(String id, String dataInicial, String dataFinal) {
+        try {
+        	Collection<?> obj = repository.relatorioCompatilhamento(id, dataInicial, dataFinal);
+            return obj;
+        } catch (NoSuchElementException e) {
+        	throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Senha.class.getName());
         }
     }
     

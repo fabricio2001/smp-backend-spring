@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import edu.ifes.ci.si.les.smp.model.Assinatura;
 import edu.ifes.ci.si.les.smp.model.Exportacao;
+import edu.ifes.ci.si.les.smp.model.Senha;
 import edu.ifes.ci.si.les.smp.repositories.AssinaturaRepository;
 import edu.ifes.ci.si.les.smp.services.exceptions.BusinessRuleException;
 import edu.ifes.ci.si.les.smp.services.exceptions.DataIntegrityException;
@@ -83,6 +84,15 @@ public class AssinaturaService {
             }
         } catch (NoSuchElementException e) {
         	throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Exportacao.class.getName());
+        }
+    }
+    
+    public Collection<?> relatorioPagamento(String id, String dataInicial, String dataFinal) {
+        try {
+        	Collection<?> obj = repository.relatorioPagamento(id, dataInicial, dataFinal);
+            return obj;
+        } catch (NoSuchElementException e) {
+        	throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Senha.class.getName());
         }
     }
     
